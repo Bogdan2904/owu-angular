@@ -1,0 +1,13 @@
+<div class="may-user">
+  <div class="info-user">
+  {{user.id}}
+  {{user.name}}
+  {{user.username}}
+  {{user.email}}
+  </div>
+
+  <div  class="posts" *ngFor="let p of user.posts" >
+    {{p.body}}
+  </div>
+
+</div>
