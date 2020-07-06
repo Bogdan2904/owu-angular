@@ -1,0 +1,10 @@
+.may-comment{
+  display: flex;
+}
+
+
+.may-comment-card{
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+}

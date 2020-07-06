@@ -1,0 +1,10 @@
+<div class="post">
+  {{post.id}} - {{post.userId}}-{{post.title}}
+  {{post.body}}
+
+  <button (click)="getCommentsForSinglePost(post.id)">Get comment</button>
+
+  <div>
+    <app-comment *ngFor="let comment of post.comments" [comment]="comment"></app-comment>
+  </div>
+</div>
