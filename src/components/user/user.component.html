@@ -1,0 +1,8 @@
+<div>
+  {{user.id}} - {{user.name}}
+  <button (click)="getAllAlbumBySingleUser(user.id)">Get album</button>
+
+  <div>
+    <app-albom *ngFor="let album of user.albums" [album]="album"></app-albom>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {UserService} from '../../modules/user/user.service';
+import {IUser} from '../../Interfases/user.interface';
 
 
 @Component({
@@ -8,6 +10,10 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  users: IUser[];
+
+  constructor(private userService: UserService) {
+    this.userService
+      .getAllUsers().subscribe(usersArr => this.users = usersArr);
   }
 }

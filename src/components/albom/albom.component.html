@@ -1,0 +1,9 @@
+<div>
+  {{album.title}}
+
+  <button (click)="getAllPhotosBySingleAlbum(album.id)">Get photos</button>
+
+  <div>
+    <app-photo *ngFor="let photo of album.photos" [photo]="photo" > </app-photo>
+  </div>
+</div>
