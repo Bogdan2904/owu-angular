@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {UserService} from '../../modules/user.service';
+import {IUser} from '../../Interfases/user';
 
 
 @Component({
@@ -8,6 +10,10 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
+  users: IUser[];
+
   constructor() {
   }
+
+
 }

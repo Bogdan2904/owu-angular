@@ -1,4 +1,4 @@
-export class Post {
+export interface IPost {
   id: number;
   body: string;
   userId: number;
