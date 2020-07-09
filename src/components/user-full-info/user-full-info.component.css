@@ -1,0 +1,9 @@
+.may-full-user {
+  border: 1px dashed black;
+  margin: 30px;
+  padding: 15px;
+}
+
+.may-full-user-posts {
+  margin-top: 20px;
+}

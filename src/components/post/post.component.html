@@ -1,0 +1,4 @@
+<div *ngIf="post">
+  {{post.id}} - {{post.title}}
+  <button (click)="getCommentsToSinglePost(post.id)">Get comments</button>
+</div>
