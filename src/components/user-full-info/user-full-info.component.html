@@ -1,0 +1,14 @@
+<div *ngIf="user" class="may-full-user">
+  {{user.id}} - {{user.username}}
+  <div>
+    {{user.name}}<br>
+    <app-company [company]=user.company></app-company>
+  </div>
+  <div class="may-full-user-posts">
+    Posts:
+    <app-post *ngFor="let post of user.posts" [post]="post"></app-post>
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
