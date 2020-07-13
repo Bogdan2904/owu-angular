@@ -1,0 +1,14 @@
+<div class="may-page">
+  <div class="may-last-page" >
+  Posts:
+
+  <div>
+    <app-post-info *ngFor="let post of posts" [post]="post"></app-post-info>
+  </div>
+
+  <div>
+    Comments:
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+</div>

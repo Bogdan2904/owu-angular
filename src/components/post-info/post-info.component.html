@@ -1,0 +1,7 @@
+<div>
+  <div>
+ Id: {{post.id}} - User id: {{post.userId}}
+  </div>
+<!--  <a routerLink="post/{{post.id}}/comments">Title: {{post.title}}</a>-->
+<div (click)="showAllComments(post)" class="title">Title: {{post.title}}</div>
+</div>

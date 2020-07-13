@@ -1,0 +1,10 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.header-users{
+  width: 70%;
+  display: flex;
+}
