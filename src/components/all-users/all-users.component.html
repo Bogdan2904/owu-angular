@@ -1,0 +1,12 @@
+<form #myForm="ngForm" (ngSubmit)="getUser()">
+  <select name="id" [(ngModel)]="id">
+    <option *ngFor="let user of users; let i = index" [value]="i+1">
+          {{i+1}}
+    </option>
+  </select>
+  <button>find user</button>
+</form>
+
+<div>
+ {{user?.id}}
+</div>

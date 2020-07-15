@@ -1,8 +1,7 @@
-import {Post} from './post';
+import {IPost} from './post';
 
-export class User {
+export interface IUser {
   id: number;
   name: string;
-  posts: Post[];
-
+  posts: IPost[];
 }
