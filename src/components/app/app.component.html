@@ -1,1 +1,24 @@
-<h1>Hello clear angular</h1>
+<form #myForm='ngForm' (ngSubmit)="subm()" >
+  <select name="nameUser" [(ngModel)]="nameUser">
+    <option *ngFor=" let user of users" [value]="user.id">
+      {{user.name}}
+    </option>
+  </select>
+  <button>submit</button>
+</form>
+
+<div *ngIf="user">
+ {{user.id}} - {{user.name}} <br>
+  Username: {{user.name}}<br>
+  Email: {{user.email}}<br>
+  <app-posts *ngFor="let post of user.posts" [post]="post"></app-posts>
+  <form #form='ngForm' (ngSubmit)="find()">
+    <input type="text" [(ngModel)]="postId" name="ddd">
+    <button>find comment</button>
+  </form>
+</div>
+
+<div *ngIf="comments">
+  <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+
+</div>
