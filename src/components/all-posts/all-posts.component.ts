@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IPost} from '../../Interfases/post';
 import {ActivatedRoute} from '@angular/router';
 
@@ -9,8 +9,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class AllPostsComponent implements OnInit {
 
-  id: number;
+  postId = 1;
   posts: IPost[];
+  post: IPost;
+
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe(value => this.posts = value.postsArr);
   }
@@ -18,4 +20,7 @@ export class AllPostsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getPostInfo(): void {
+    this.post = this.posts.find(elem => elem.id === this.postId);
+  }
 }

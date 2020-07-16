@@ -1,1 +1,14 @@
-<p>all-posts works!</p>
+<form #myPostForm='ngForm' (ngSubmit)="getPostInfo()">
+  <select name="nameOfPost" [(ngModel)]="postId">
+    <option *ngFor="let post of posts" [ngValue]="post.id">
+      poist id: {{post.id}}
+    </option>
+  </select>
+  <button>get post info</button>
+
+
+</form>
+
+<div *ngIf="post">
+  posdt id: {{post.id}} - post title: {{post.title}}
+</div>

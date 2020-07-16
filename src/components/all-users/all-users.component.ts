@@ -11,7 +11,7 @@ export class AllUsersComponent implements OnInit {
 
   user: IUser;
   users: IUser[];
-  id: number;
+  userId = 1;
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe(value => this.users = value.usersArr);
@@ -21,7 +21,6 @@ export class AllUsersComponent implements OnInit {
   }
 
   getUser(): void {
-    const id = this.id;
-    this.users.map(us => us.id === parseInt(id));
+    this.user = this.users.find(us => us.id === this.userId);
   }
 }
