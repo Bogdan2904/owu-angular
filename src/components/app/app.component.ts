@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {CommentService, PostService, UserService} from '../../modules';
 import {IUser} from '../../Interfases/user';
 import {IComment} from '../../Interfases/comment';
+import {toNumbers} from '@angular/compiler-cli/src/diagnostics/typescript_version';
 
 
 @Component({
@@ -28,8 +29,8 @@ export class AppComponent {
   }
 
   subm(): void {
-    console.log(this.nameUser);
     this.user = this.users.find(us => us.id === this.nameUser);
+    this.comments = [];
   }
 
   find(): void {

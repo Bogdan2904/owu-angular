@@ -1,6 +1,6 @@
 <form #myForm='ngForm' (ngSubmit)="subm()" >
   <select name="nameUser" [(ngModel)]="nameUser">
-    <option *ngFor=" let user of users" [value]="user.id">
+    <option *ngFor=" let user of users" [ngValue]="user.id">
       {{user.name}}
     </option>
   </select>
@@ -16,9 +16,9 @@
     <input type="text" [(ngModel)]="postId" name="ddd">
     <button>find comment</button>
   </form>
+
+  <div *ngIf="comments">
+    <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+  </div>
 </div>
 
-<div *ngIf="comments">
-  <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
-
-</div>
