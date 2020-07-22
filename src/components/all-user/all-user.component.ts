@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IUser} from '../../Interfaces';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
   selector: 'app-all-user',
@@ -28,6 +29,7 @@ export class AllUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.newUserForm.valueChanges.pipe(debounceTime(400)).subscribe(value => console.log(value));
   }
 
 
