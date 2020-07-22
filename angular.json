@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "owu-angular"
+    }
+  },
+  "defaultProject": "owu-angular",
+  "cli": {
+    "analytics": false
+  }
 }

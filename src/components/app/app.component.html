@@ -1,1 +1,18 @@
-<h1>Hello clear angular</h1>
+<form [formGroup]="form">
+  <div> Email:
+    <input type="text" [formControl]="email">
+    <div *ngIf="form.controls.email.invalid">
+    This field is required
+    </div>
+  </div>
+  <div> Password:
+    <input type="text" formControlName="password">
+    <div *ngIf="form.controls.password.invalid">
+      Password less 5 chars
+    </div>
+  </div>
+  <div> Confirm password:
+    <input type="text" formControlName="confirm">
+  </div>
+  <button [disabled]="form.invalid || form.hasError('passwordError')" (click)="save(form)">save</button>
+</form>
