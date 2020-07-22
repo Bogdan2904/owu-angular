@@ -8,7 +8,10 @@
 <!--</form>-->
 
 
-<form [formGroup]="form">
+<div class="show-user">
+
+
+<form [formGroup]="form" >
   <select name="us" formControlName="selectedUser">
     <option *ngFor="let user of users" [ngValue]="user.id">
       {{user.id}}
@@ -20,3 +23,18 @@
 <div *ngIf="user">
   <app-user [user]="user"></app-user>
 </div>
+</div>
+
+
+<form [formGroup]="newUserForm" class="new-user-form">
+  Create new user:
+  <div>User name:
+    <input type="text" formControlName="name">
+  </div>
+  <div> New email:
+    <input type="text" formControlName="email">
+  </div>
+  <button [disabled]="newUserForm.invalid" (click)="createNewUser(newUserForm)">
+  create new user
+  </button>
+</form>
