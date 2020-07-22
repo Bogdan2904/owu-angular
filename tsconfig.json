@@ -15,6 +15,15 @@
     },
     {
       "path": "./e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/all-users/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/all-users/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/all-users/e2e/tsconfig.json"
     }
 ]
 }

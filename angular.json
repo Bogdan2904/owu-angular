@@ -119,6 +119,127 @@
           }
         }
       }
-    }},
-  "defaultProject": "owu-angular"
+    },
+    "all-users": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/all-users",
+      "sourceRoot": "projects/all-users/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/all-users",
+            "index": "projects/all-users/src/index.html",
+            "main": "projects/all-users/src/main.ts",
+            "polyfills": "projects/all-users/src/polyfills.ts",
+            "tsConfig": "projects/all-users/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/all-users/src/favicon.ico",
+              "projects/all-users/src/assets"
+            ],
+            "styles": [
+              "projects/all-users/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/all-users/src/environments/environment.ts",
+                  "with": "projects/all-users/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "all-users:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "all-users:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "all-users:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/all-users/src/test.ts",
+            "polyfills": "projects/all-users/src/polyfills.ts",
+            "tsConfig": "projects/all-users/tsconfig.spec.json",
+            "karmaConfig": "projects/all-users/karma.conf.js",
+            "assets": [
+              "projects/all-users/src/favicon.ico",
+              "projects/all-users/src/assets"
+            ],
+            "styles": [
+              "projects/all-users/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/all-users/tsconfig.app.json",
+              "projects/all-users/tsconfig.spec.json",
+              "projects/all-users/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/all-users/e2e/protractor.conf.js",
+            "devServerTarget": "all-users:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "all-users:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "owu-angular",
+  "cli": {
+    "analytics": "938272ca-b235-4242-8c84-c47870346393"
+  }
 }

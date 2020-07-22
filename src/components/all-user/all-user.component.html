@@ -1,0 +1,22 @@
+<!--<form #f='ngForm'>-->
+<!--  <select name="us" [(ngModel)]="selectedUser" >-->
+<!--    <option *ngFor="let user of users" [ngValue]="user.id">-->
+<!--      user id {{user.id}}-->
+<!--    </option>-->
+<!--  </select>-->
+<!--  <button (click)="showUserInfo()">show user info</button>-->
+<!--</form>-->
+
+
+<form [formGroup]="form">
+  <select name="us" formControlName="selectedUser">
+    <option *ngFor="let user of users" [ngValue]="user.id">
+      {{user.id}}
+    </option>
+  </select>
+  <button (click)="showInfo(form)">show info about user</button>
+</form>
+
+<div *ngIf="user">
+  <app-user [user]="user"></app-user>
+</div>

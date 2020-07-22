@@ -1,0 +1,12 @@
+<form [formGroup]="postForm">
+  <select name="pst" formControlName="selectedPost">
+    <option *ngFor="let p of posts" [ngValue]="p.id">
+      post id {{p.id}}
+    </option>
+  </select>
+  <button (click)="showPostInfo(postForm)">show info about post</button>
+</form>
+
+<div *ngIf="post">
+  <app-post [post]="post"></app-post>
+</div>
