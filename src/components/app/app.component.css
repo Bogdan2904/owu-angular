@@ -1,0 +1,15 @@
+.may-form-inputs{
+  display: flex;
+}
+.may-page{
+  display: flex;
+}
+
+.all-users{
+  width: 50%;
+  height: 400px;
+}
+.filtred-users{
+  width: 50%;
+  height: 400px;
+}

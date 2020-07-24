@@ -1,1 +1,37 @@
-<h1>Hello clear angular</h1>
+<form [formGroup]="filterForm">
+  <div class="may-form-inputs">
+    <div> By name:
+      <input type="text" formControlName="filterByName">
+    </div>
+    <div> By name lenght
+      <input type="text" formControlName="filterByUpToUserNameLength">
+    </div>
+    <div> Min id
+      <input type="text" formControlName="filterMinValueId">
+    </div>
+    <div> Max id
+      <input type="text" formControlName="filterMaxValueId">
+    </div>
+  </div>
+<!--  <button (click)="filter(filterForm)"> lets filter </button>-->
+</form>
+
+<div class="may-page">
+  <div class="all-users">
+    <div *ngFor="let user of users">
+      Id user - {{user.id}}
+      Name user - {{user.name}}
+      Username user - {{user.username}}
+    </div>
+  </div>
+  <div class="filtred-users">
+      <div *ngIf="newUsersArr">
+        <div *ngFor="let us of newUsersArr">
+          Id user - {{us.id}}
+          Name user - {{us.name}}
+          Username user - {{us.username}}
+        </div>
+
+      </div>
+  </div>
+</div>
