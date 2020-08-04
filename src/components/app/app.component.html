@@ -1,1 +1,8 @@
-<h1>Hello clear angular</h1>
+<div *ngFor="let us of users">
+<!--  {{us.name | uppercase}}-->
+<!--  <button *ngIf="us.email.endsWith('org')">{{'get more info' | more :us.name}}</button>-->
+<!--  <hr>-->
+  <span appBold>{{us.name | uppercase}}</span>
+<!--  <button [ngStyle]="{background: us.id > 5 ? 'red' : 'green'}">{{'get more info' | more :us.name}}</button>-->
+  <hr>
+</div>

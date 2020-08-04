@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -8,6 +9,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  users: any[];
+  constructor(private httpClient: HttpClient) {
+    this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/users').subscribe(usersArr => this.users = usersArr);
   }
 }
