@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obserable</title>
+</head>
+<body>
+
+<script>
+  class RadioStation{
+    constructor(song) {
+      this.listener = []; //{name: str, status: boolean}
+      this.song = song;
+    }
+
+    addSubscriber(client){
+      this.listener.push(client);
+    }
+
+    changeSong(newSong){
+      this.song = newSong;
+    }
+
+    subscribe(){
+      for (const listener of this.listener  ) {
+        console.log(`dear ${listener.name} you listen ${this.song}`);
+
+      }
+    }
+  }
+
+  let radioStation = new RadioStation('sds');
+  let user1 = {name: 'Vasya', status: true}
+  let user2 = {name: 'Petya', status: false}
+
+  radioStation.addSubscriber(user1)
+  radioStation.addSubscriber(user2)
+
+  radioStation.subscribe();
+
+  radioStation.changeSong('pink');
+  radioStation.subscribe();
+
+  radioStation.addSubscriber({name: 'Kokos', status: false})
+  radioStation.changeSong('maroon 5');
+
+  radioStation.subscribe();
+
+
+</script>
+</body>
+</html>

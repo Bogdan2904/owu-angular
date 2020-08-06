@@ -1,1 +1,14 @@
-<h1>Hello clear angular</h1>
+<h1>{{title}}</h1>
+<form [formGroup]="myForm">
+  <input [formControl]="login" >
+  <input [formControl]="password" >
+  <button [disabled]="myForm.invalid" (click)="doCheck(myForm)"> save </button>
+</form>
+
+<ul>
+  <li><a routerLink="next">next module</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+<hr>
+<app-hello (xxx)="readChildvalue($event)"></app-hello>
