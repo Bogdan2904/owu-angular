@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {UserService} from './services/user.service';
+import {IUser} from './Interfaces/IUser';
+import {usersWithAddress} from './constants/users';
 
 
 @Component({
@@ -8,6 +11,11 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  usersFromJSON: IUser[];
+  usersFromConstants = usersWithAddress;
+
+
+  constructor(private userService: UserService) {
+    this.userService.getAllUsers().subscribe(allUsers => this.usersFromJSON = allUsers);
   }
 }
