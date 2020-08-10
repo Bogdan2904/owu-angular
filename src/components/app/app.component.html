@@ -1,1 +1,8 @@
-<h1>Hello clear angular</h1>
+
+<div class="value_counter">{{counter}}</div>
+
+<!--<div><a routerLink="buttons">to change counter click here</a></div>-->
+<!--<router-outlet></router-outlet>-->
+
+<app-buttons (newNumber)="readChildValue($event)"></app-buttons>
+

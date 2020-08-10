@@ -1,0 +1,9 @@
+.counter_buttons{
+  display: flex;
+  padding: 150px;
+  justify-content: center;
+}
+
+button{
+  width: 150px;
+}
